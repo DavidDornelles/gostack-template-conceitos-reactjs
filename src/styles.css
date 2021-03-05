@@ -15,7 +15,13 @@ div {
 
 div li {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+div ul > li {
+  border-bottom: 1px solid #333;
 }
 
 div li ol {
