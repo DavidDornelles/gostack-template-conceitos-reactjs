@@ -15,8 +15,7 @@ div {
 
 div li {
   display: flex;
-  flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
 }
 
 div li ol {
@@ -29,13 +28,14 @@ div li + li {
 
 button {
   background: #7159c1;
-  color: #fff;
   border: 0;
-  padding: 10px 15px;
+  color: #fff;
   cursor: pointer;
-  margin-top: 15px;
-  font-weight: bold;
+  display: in;
   font-size: 14px;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px 15px;
 }
 
 div li button {

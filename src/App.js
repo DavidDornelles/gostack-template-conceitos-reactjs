@@ -14,7 +14,7 @@ function App() {
 
   async function handleAddRepository() {
     const response = await api.post('repositories', {
-      title: `Nome Aleatório`,
+      title: `Nome ${Date.now()}`,
       url: `https://www.github.com.br/${Date.now()}`,
       techs: ['Tech 1', 'Tech 2', 'Tech 3']
     });
@@ -33,17 +33,13 @@ function App() {
   return (
     <div>
       <ul data-testid="repository-list">
-          {repositories.map(
-            repository => (
-              <li key={repository.id}><span>{repository.title.toUpperCase()} ({repository.url}) | {repository.likes} Likes <button onClick={() => handleRemoveRepository(repository.id)}>Remover</button></span>              
-                <ol>
-                  {repository.techs.map(
-                    (tech, index) => <li key={ `tech-${index + 1}`}>{tech}</li>)
-                  }
-                </ol>
-              </li>
-            )
-          )}
+        {repositories.map(repository =>
+          <li key={repository.id}>
+            {repository.title}
+            <span>&nbsp;({repository.url}) | {repository.likes} 
+            <button onClick={() => handleRemoveRepository(repository.id)}>Remover</button></span>
+          </li>
+        )}
       </ul>
 
       <button onClick={handleAddRepository}>Adicionar</button>
