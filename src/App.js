@@ -38,7 +38,7 @@ function App() {
             {repository.title}            
             <span>&nbsp;({repository.url}) | {repository.likes} Likes <button onClick={() => handleRemoveRepository(repository.id)}>Remover</button></span>
             <ol>
-              {repository.techs.map(tech => <li>{tech}</li>)}
+              {repository.techs.map((tech, index) => <li key={`tech-${index}`}>{tech}</li>)}
             </ol>
           </li>
         )}
